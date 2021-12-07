@@ -1,0 +1,16 @@
+LAGRANTO FOR ECHAM5
+-----------------------------------------------------------------------
+This directory contains all the the relevant source codes required to compile Lagranto Package. The origianl folder structure for the codes is adjusted in order to compile the 
+the programs into the current directory. Note that the intallation guide for the origianl package is change here since I want to install for any linux system which is more 
+easier than the original installation guide. To compile these various programs, netcdf and gfortran on bash environment is required. You would need the path to your netcdf libriary
+( note that if you are using the latest netcdf, the fortran installation folder must be linked in the Makefile)
+
+1. Export the repository containing the codes as LAGRANTO
+>> export LAGRANTO="path to current directory"
+
+2. Clean the binaries and objects if you failed to use them directory on your computer due to different system (use ldd "package" to check the compatibility)
+>> make clean
+
+3. Run make to install the package with into your current path. 
+>> make 
+
