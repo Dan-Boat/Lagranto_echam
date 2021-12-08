@@ -1,0 +1,15 @@
+LAGRANTO WITH ECAHM
+------------------------------
+This folder contains all the routines required to perform trajectory analysis using model ouput from echam (the details for all the steps will be updated)
+
+1. Post-processing of model output 
+
+
+2. Generating input files for lagranto 
+
+
+3. Runimg the lagranto calculations 
+
+
+4. Visualization of trajectories 
+

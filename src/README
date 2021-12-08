@@ -1,6 +1,6 @@
 LAGRANTO FOR ECHAM5
 -----------------------------------------------------------------------
-This directory contains all the the relevant source codes required to compile Lagranto Package. The origianl folder structure for the codes is adjusted in order to compile the 
+This directory contains all the the relevant source codes required to compile Lagranto Package. The origianl folders structure for the codes are adjusted in order to compile the 
 the programs into the current directory. Note that the intallation guide for the origianl package is change here since I want to install for any linux system which is more 
 easier than the original installation guide. To compile these various programs, netcdf and gfortran on bash environment is required. You would need the path to your netcdf libriary
 ( note that if you are using the latest netcdf, the fortran installation folder must be linked in the Makefile)

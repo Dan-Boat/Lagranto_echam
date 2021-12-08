@@ -1,7 +1,13 @@
-# This script must be modiefied with your ecmwf user account to be able to request data. 
+# This script requires your ecmwf user account key and email. Kindly visit the official page for registration
 
 # Script for requesting ERA-Interim data 
+
+#import modules
+
 from ecmwfapi import ECMWFDataServer
+from datetime import timedelta, date
+
+
 
 server = ECMWFDataServer(url="https://api.ecmwf.int/v1",key="17a95f7d18675c0f2959f092859f191c",email="dannboateng@gmail.com")
 def download_ERAi(date_str, hour_str):
@@ -89,7 +95,7 @@ def download_ERAi(date_str, hour_str):
 
 
 
-from datetime import timedelta, date
+
 
 def daterange(start_date, end_date):
     for n in range(int ((end_date - start_date).days)):
