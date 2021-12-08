@@ -1,0 +1,13 @@
+Preocessing echam model output for lagranto
+------------------------------------------------------------
+This repository contains the scripts required for post-Preocessing echam model output for lagranto. The test_extractvars.sh 
+uses afterburner package to extract relevant climate variables for the raw model output. (The number of variables can be modified but U,V,OMEGA
+velocity fields and surface pressure variables are required for the model). The code also uses cdo to calculate the monthly means of the variables and merge the time into
+monthly output. 
+Note that if all the individual variables can be merge into one file by using cdo merge
+
+Additionally, the 6h_means also computes the hourly means for the model year runs, which can also be merge together into a single output. 
+
+The post-processed file must be adjusted in terms of data structure and variable names using the scripts in the generate_data folder (which uses nco commands and a python script)
+
+Please contact me for further guidelines
