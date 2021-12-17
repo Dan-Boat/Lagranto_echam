@@ -77,9 +77,9 @@ def echam4lagranto(path_to_data, filename, month=None, season=None, day=None, ye
     
     #rename variables
     if all(hasattr(data, attr) for attr in ["lsp", "aps", "aprl", "aprc", "u", "v", "omega", "svo", "relhum",
-                                            "geopoth", "st"]):
+                                            "geopoth", "st", "q"]):
         data = data.rename({"lsp":"LSP", "st":"T", "aps":"PS", "omega":"OMEGA", "u":"U", "v":"V",
-                                        "geopoth":"z", "svo":"SVO", "relhum":"RH", "aprl":"LP", "aprc":"CP"})
+                                        "geopoth":"z", "svo":"SVO", "relhum":"RH", "aprl":"LP", "aprc":"CP", "q":"Q"})
     else: 
         print("More variables or less are not detected in the meta data")
         
@@ -133,20 +133,13 @@ def echam4lagranto(path_to_data, filename, month=None, season=None, day=None, ye
 #Generating data for 10 days using a monthly input data (This can be adjusted depending on the 
 # prcessed echam data)   
 # defining paths 
-path_to_data = "/home/dboateng/source_codes/lagranto/new/"
-path_to_data_2013 = "/home/dboateng/source_codes/lagranto/new/data_2013/"
-path_to_a001 = "/home/dboateng/source_codes/lagranto/new/a001/"
 
-path_to_echam = "/home/dboateng/Model_output_pst/a001_hpc-bw_e5w2.3_t159_PI_Alps_east_300_t159l31.6h/output_processed/6h_MEANS/"
-
-dataP_name ="P20130601_00"
-dataPP_name ="P10030601_00"
-dataS_name ="S20130601_00"
-echam_data_name= "a001_1003_1017_06_lterm.nc"
-
+path_to_echam = "/home/dboateng/Model_output_pst/a003_hpc-bw_e5w2.3_t159_PI_Alps_east_0_t159l31.6h/output_processed/6h_MEANS"
+path_to_store = "/home/dboateng/source_codes/lagranto/new/a003/August"
+filename = "a003_1010_1017_08_lterm.01.nc"
          
-for i in range(1,11,1):
+for i in range(1,16,1):
     print ("extracting for day", i)
-    echam4lagranto(path_to_data=path_to_echam, filename=echam_data_name, month=None, day=i, path_to_save=path_to_data, month_num=6, 
-                  start_date="2000-06-01", year=2000)
+    echam4lagranto(path_to_data=path_to_echam, filename=filename, month=None, day=i, path_to_save=path_to_store, month_num=8, 
+                  start_date="2000-08-01", year=2000)
     
