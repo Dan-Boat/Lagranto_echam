@@ -4,7 +4,8 @@ INC = -I/home/dboateng/applications/netcdf_f/include
 LIB = -L/home/dboateng/applications/netcdf_f/lib -lnetcdff -lnetcdf
 OBJ = times.o iotra.o ioinp.o inter.o libcdfio.o libcdfplus.o 
 OBJS_select = special.o select.o times.o iotra.o ioinp.o inter.o libcdfio.o libcdfplus.o
-EXE = caltra create_startf density changet datelist difference extract getmima gettidiff getvars list2lsl lsl2list lsl2rdf mergetra newtime reformat timeres trainfo lidar trace select
+OBJS_traj2num = traj2num.o iotra.o libcdfio.o libcdfplus.o
+EXE = caltra create_startf density changet datelist difference extract getmima gettidiff getvars list2lsl lsl2list lsl2rdf mergetra newtime reformat timeres trainfo lidar trace select traj2num
 
 all: $(EXE)
 
@@ -79,6 +80,9 @@ trace:	$(OBJ)
 
 select: $(OBJS_select)
 	$(FFORT) -o select $(OBJS_select) ${INC} $(LIB)
+
+traj2num: $(OBJS_select)
+	$(FFORT) -o traj2num $(OBJS_select) ${INC} $(LIB)
 
 
 

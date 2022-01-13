@@ -216,6 +216,7 @@ set ntra      = `${LAGRANTO}/trainfo.sh ${inpfile} ntra`
 set ntim      = `${LAGRANTO}/trainfo.sh ${inpfile} ntim`
 set ncol      = `${LAGRANTO}/trainfo.sh ${inpfile} ncol`
 
+echo $startdate
 # Check format of start and end date - must be the same
 set ns=`echo $startdate | sed -e 's/_[0-9]*//' | wc -c`
 set ne=`echo $enddate   | sed -e 's/_[0-9]*//' | wc -c`

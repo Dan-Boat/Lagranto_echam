@@ -7,7 +7,7 @@
 # Write usage information
 if ( ${#argv} == 0) then
   echo 
-  ${LAGRANTO}/bin/lagrantohelp mergetra short 
+  ${LAGRANTO}
   echo  
   exit 0
 endif

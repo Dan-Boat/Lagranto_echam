@@ -135,11 +135,11 @@ def echam4lagranto(path_to_data, filename, month=None, season=None, day=None, ye
 # defining paths 
 
 path_to_echam = "/home/dboateng/Model_output_pst/a003_hpc-bw_e5w2.3_t159_PI_Alps_east_0_t159l31.6h/output_processed/6h_MEANS"
-path_to_store = "/home/dboateng/source_codes/lagranto/new/a003/August"
-filename = "a003_1010_1017_08_lterm.01.nc"
+path_to_store = "/home/dboateng/source_codes/lagranto/new/a003/June"
+filename = "a003_1010_1017_06_lterm.01.nc"
          
-for i in range(1,16,1):
+for i in range(16,30,1):
     print ("extracting for day", i)
-    echam4lagranto(path_to_data=path_to_echam, filename=filename, month=None, day=i, path_to_save=path_to_store, month_num=8, 
-                  start_date="2000-08-01", year=2000)
+    echam4lagranto(path_to_data=path_to_echam, filename=filename, month=None, day=i, path_to_save=path_to_store, month_num=6, 
+                  start_date="2000-06-01", year=2000)
     
