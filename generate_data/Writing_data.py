@@ -78,8 +78,14 @@ def echam4lagranto(path_to_data, filename, month=None, season=None, day=None, ye
     #rename variables
     if all(hasattr(data, attr) for attr in ["lsp", "aps", "aprl", "aprc", "u", "v", "omega", "svo", "relhum",
                                             "geopoth", "st", "q"]):
+        
         data = data.rename({"lsp":"LSP", "st":"T", "aps":"PS", "omega":"OMEGA", "u":"U", "v":"V",
                                         "geopoth":"z", "svo":"SVO", "relhum":"RH", "aprl":"LP", "aprc":"CP", "q":"Q"})
+    elif all(hasattr(data, attr) for attr in ["lsp", "aps", "aprl", "aprc", "u", "v", "omega", "svo", "relhum",
+                                            "geopoth", "st"]):
+        
+        data = data.rename({"lsp":"LSP", "st":"T", "aps":"PS", "omega":"OMEGA", "u":"U", "v":"V",
+                                        "geopoth":"z", "svo":"SVO", "relhum":"RH", "aprl":"LP", "aprc":"CP"})
     else: 
         print("More variables or less are not detected in the meta data")
         
@@ -134,9 +140,9 @@ def echam4lagranto(path_to_data, filename, month=None, season=None, day=None, ye
 # prcessed echam data)   
 # defining paths 
 
-path_to_echam = "/home/dboateng/Model_output_pst/a003_hpc-bw_e5w2.3_t159_PI_Alps_east_0_t159l31.6h/output_processed/6h_MEANS"
-path_to_store = "/home/dboateng/source_codes/lagranto/new/a003/June"
-filename = "a003_1010_1017_06_lterm.01.nc"
+path_to_echam = "/home/dboateng/Model_output_pst/a002_hpc-bw_e5w2.3_t159_PI_Alps_east_100_t159l31.6h/output_processed/6h_MEANS"
+path_to_store = "/home/dboateng/source_codes/lagranto/new/a002/June"
+filename = "a002_1003_1017_06_lterm.01.nc"
          
 for i in range(16,30,1):
     print ("extracting for day", i)
