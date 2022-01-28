@@ -15,6 +15,14 @@ import os
 
 # initialize the variable for reading trajectories from an ascii file
 from dypy.lagranto import Tra
+data_path = "/home/dboateng/source_codes/lagranto/new/a001/June/Trace/Stuttgart"
+
+files = ["wcb_1.1", "wcb_2.1"]
+filename = os.path.join(data_path, files[0])
+trajs = Tra(filename)
+new_trajs = [Tra(os.path.join(data_path, f)) for f in files]
+all_trajs = trajs.concatenate(new_trajs)
+
 trajs1 = Tra()
 trajs2 = Tra()
 trajs3 = Tra()
@@ -43,29 +51,32 @@ traj10 = Tra()
 # 
 # load the trajectories
 #trajs1.load_ascii('/home/dboateng/source_codes/lagranto/new/a003/June/wcb.1')
-trajs0.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_0.1')
-trajs1.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_1.1')
-trajs2.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_2.1')
-trajs3.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_3.1')
-trajs4.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_4.1')
-trajs5.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_5.1')
-trajs6.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_6.1')
-trajs7.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_7.1')
-trajs8.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_8.1')
-trajs9.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_9.1')
-trajs10.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_10.1')
+trajs0.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/Stuttgart/wcb_1.1')
+trajs1.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/Stuttgart/wcb_2.1')
 
 
-traj1.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_1.1')
-traj2.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_2.1')
-traj3.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_3.1')
-traj4.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_4.1')
-traj5.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_5.1')
-traj6.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_6.1')
-traj7.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_7.1')
-traj8.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_8.1')
-traj9.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_9.1')
-traj10.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_10.1')
+# trajs2.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_2.1')
+# trajs3.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_3.1')
+# trajs4.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_4.1')
+# trajs5.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_5.1')
+# trajs6.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_6.1')
+# trajs7.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_7.1')
+# trajs8.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_8.1')
+# trajs9.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_9.1')
+# trajs10.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_10.1')
+
+
+# traj1.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_1.1')
+# traj2.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_2.1')
+# traj3.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_3.1')
+# traj4.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_4.1')
+# traj5.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_5.1')
+# traj6.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_6.1')
+# traj7.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_7.1')
+# traj8.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_8.1')
+# traj9.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_9.1')
+# traj10.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/July/Trace/wcb_10.1')
+
 #trajs5.load_ascii('/home/dboateng/source_codes/lagranto/new/a001/June/Trace/wcb_5.1')
 # trajs7.load_ascii('/home/dboateng/source_codes/lagranto/new/a003/August/Trace/wcb_7.1')
 # trajs8.load_ascii('/home/dboateng/source_codes/lagranto/new/a003/August/Trace/wcb_8.1')
